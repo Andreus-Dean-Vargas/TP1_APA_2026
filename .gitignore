@@ -1,0 +1,30 @@
+# Material de aula (não faz parte do trabalho)
+Aula1.pdf
+Aula2.pdf
+*.pdf
+
+# Artefatos gerados
+benchmark_results.png
+*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# C++ (binários e objetos)
+*.o
+*.obj
+*.out
+*.exe
+a.out
+build/
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

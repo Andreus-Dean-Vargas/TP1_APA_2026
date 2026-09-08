@@ -1,0 +1,229 @@
+{
+  "_workflow": {
+    "descricao": "Este arquivo é a lista de tarefas do TP1, executada no fluxo Harness + SDD. Cada sprint roda em uma JANELA DE CONTEXTO LIMPA (chat novo).",
+    "protocolo_por_sprint": [
+      "1. Abrir chat novo (janela limpa).",
+      "2. Ler ESTADO.md para descobrir a próxima sprint (a primeira com status 'pending' cuja dependência está 'done').",
+      "3. Ler aqui no SPEC.json a sprint correspondente: goal, features, acceptance_criteria, edge_cases, files_affected.",
+      "4. Apresentar ao aluno o plano da sprint + critérios de aceite e AGUARDAR aprovação explícita (Fase D — SPEC Review).",
+      "5. Executar somente após o 'ok'. Respeitar o campo 'executor' e 'papel_do_aluno' de cada sprint.",
+      "6. Fechar a sprint (Fase F): atualizar status aqui e em ESTADO.md, e fazer um commit no padrão do projeto."
+    ],
+    "regra_de_ouro_academica": "O aluno deve dominar e saber defender cada decisão. Sprints marcadas 'papel_do_aluno: escreve' significam que o ALUNO redige o código/prova; a IA orienta por perguntas (tutor socrático), revisa e explica — NUNCA entrega pronto.",
+    "referencia_bibliografica_oficial": "CORMEN, LEISERSON, RIVEST, STEIN (CLRS) — Algoritmos: Teoria e Prática, Campus, 2002 (Cap. 2). Citada no slide 27 da Aula2."
+  },
+  "project": "TP1 — Método de Ordenação Autoral (Análise e Projeto de Algoritmos - ES)",
+  "version": "1.0",
+  "prd_ref": "PRD.md",
+  "estado_ref": "ESTADO.md",
+  "regras_ref": "CLAUDE.md",
+  "sprints": [
+    {
+      "id": "sprint-00",
+      "goal": "Versionar apenas o TP1 no repo privado, com push HTTPS sem re-login.",
+      "status": "done",
+      "executor": "IA (infra)",
+      "papel_do_aluno": "revisa",
+      "features": [
+        {
+          "name": "Repositório git do TP1",
+          "description": "Inicializar git dentro de tp1/, configurar credential helper via gh, versionar só o que faz parte do trabalho.",
+          "acceptance_criteria": [
+            "Dado o gh já autenticado, quando rodar 'gh auth setup-git', então push HTTPS funciona sem prompt de login",
+            "Dado o git init em tp1/, quando 'git status', então PDFs das aulas NÃO aparecem (ignorados)",
+            "Dado o commit inicial, quando visto no GitHub, então contém TP1.md, especificacoes-tp1-claude.md, TP1-Codigos-e-Benchmarks/ e os arquivos primordiais (PRD/SPEC/ESTADO/CLAUDE), sem os PDFs"
+          ],
+          "edge_cases": [
+            "Se o repo remoto estiver vazio (isEmpty), o primeiro push usa 'git push -u origin main'",
+            "Se aparecer aviso LF/CRLF, é esperado no Windows — não é erro"
+          ]
+        }
+      ],
+      "files_affected": [".gitignore", "PRD.md", "SPEC.json", "ESTADO.md", "CLAUDE.md"],
+      "dependencies": [],
+      "notes": "JÁ FEITO: git init, branch main, remote origin, .gitignore, gh auth setup-git, arquivos staged. FALTA: commit inicial (incluindo os arquivos primordiais) + push. Fechar só após aluno revisar os arquivos primordiais."
+    },
+    {
+      "id": "sprint-01",
+      "goal": "Produzir a apostila de estudo (PT-BR) que dá domínio dos fundamentos do TP1, ancorada em pesquisa online das referências e no código fornecido.",
+      "status": "pending",
+      "executor": "Sonnet (janela limpa)",
+      "papel_do_aluno": "revisa e estuda",
+      "features": [
+        {
+          "name": "Apostila modular M0–M9",
+          "description": "Um arquivo por módulo em tp1/apostila/, cada um com teoria + exemplo numérico trabalhado + referência à fonte + ligação com um arquivo real do pacote de código.",
+          "acceptance_criteria": [
+            "Dado cada módulo, quando lido, então contém: objetivo, teoria, exemplo numérico passo a passo, fonte (autor+capítulo) e link a um arquivo do código",
+            "Dado M1 (modelo RAM), quando comparado à Aula2, então reproduz a dedução T(n)=Σ ci·(#vezes) do Insertion Sort (slides 16–24)",
+            "Dada qualquer afirmação de complexidade, quando checada, então está confirmada em ≥2 fontes e a URL consta na seção de referências",
+            "Dado qualquer arquivo da apostila, quando medido, então não excede ~350 linhas (dividir se preciso)"
+          ],
+          "edge_cases": [
+            "Se uma fonte online divergir de outra, registrar a divergência e adotar o CLRS como fonte primária",
+            "Se números empíricos forem citados, extraí-los rodando a suíte real (não inventar)"
+          ]
+        }
+      ],
+      "modulos": [
+        "M0 — Mapa do TP1 (o que é cobrado, critérios, o que causa nota 0,0)",
+        "M1 — Modelo RAM e custo por linha T(n) (reproduz Insertion Sort da Aula2)",
+        "M2 — Notação assintótica O, Ω, Θ, o, ω (definições + provas simples)",
+        "M3 — Invariantes de laço (inicialização/manutenção/término; corretude do Insertion Sort)",
+        "M4 — Os 5 sorts clássicos mapeados a classical.py (tabela comparativa)",
+        "M5 — Recorrências e Divisão-e-Conquista (substituição, árvore, Teorema Mestre; DPES como estudo de caso)",
+        "M6 — Estabilidade e in-place (definições, como provar, trade-offs)",
+        "M7 — Limite inferior Ω(n log n) por comparação (árvore de decisão; counting/radix)",
+        "M8 — Medição empírica (metrics.py/benchmark.py: comparações vs movimentações, distribuições, gráficos)",
+        "M9 — Guia de defesa oral (perguntas prováveis + checklist anti-nota-0)"
+      ],
+      "fontes": [
+        "CLRS — Introduction to Algorithms (Cap. 2,3,4,7,8) — PRIMÁRIA",
+        "Sedgewick & Wayne — Algorithms 4th ed + algs4.cs.princeton.edu",
+        "Ziviani — Projeto de Algoritmos (terminologia PT-BR)",
+        "Knuth — TAOCP Vol.3 (aprofundamento/histórico)"
+      ],
+      "files_affected": ["apostila/00-indice.md", "apostila/01-modelo-ram.md", "apostila/…", "apostila/09-defesa-oral.md"],
+      "dependencies": ["sprint-00 done"],
+      "notes": "Rodar a suíte (python student_template.py / test_suite.py) para extrair números reais antes de escrever. NÃO modificar arquivos de código. authorial.py (DPES) é exemplo do professor — usar só como estudo de caso."
+    },
+    {
+      "id": "sprint-02",
+      "goal": "Escolher UM conceito de ordenação autoral não-trivial e defensável.",
+      "status": "pending",
+      "executor": "Colaborativo (IA propõe, aluno decide)",
+      "papel_do_aluno": "decide e refina",
+      "features": [
+        {
+          "name": "Conceito autoral escolhido",
+          "description": "IA propõe 2–3 ideias híbridas/estruturais distintas do DPES; para cada uma: intuição, complexidade esperada (melhor/pior/médio), estabilidade, in-place, riscos. Aluno escolhe e refina.",
+          "acceptance_criteria": [
+            "Dadas as propostas, quando avaliadas, então há ≥2 ideias não-triviais e distintas do DPES de authorial.py",
+            "Dada a ideia escolhida, quando documentada, então tem intuição, hipótese de complexidade e nota de originalidade (busca web por comportamento equivalente)",
+            "Dada a ideia, quando confrontada com as regras, então NÃO é variação cosmética de um clássico (evita nota 0,0)"
+          ],
+          "edge_cases": [
+            "Se a busca de originalidade achar algo equivalente publicado, registrar a origem e tratar como adaptação declarada (não como autoral puro)"
+          ]
+        }
+      ],
+      "files_affected": ["design/conceito-autoral.md"],
+      "dependencies": ["sprint-01 done (aluno estudou a apostila)"],
+      "notes": "Tutor socrático: guiar por perguntas, não impor. O aluno precisa conseguir explicar por que a ideia é dele."
+    },
+    {
+      "id": "sprint-03",
+      "goal": "Pseudocódigo rigoroso + invariante de laço que prova a ordenação.",
+      "status": "pending",
+      "executor": "Aluno escreve (IA orienta)",
+      "papel_do_aluno": "escreve",
+      "features": [
+        {
+          "name": "Formalização e prova de corretude",
+          "description": "Aluno redige o pseudocódigo e o invariante de laço (inicialização/manutenção/término) com exemplo numérico passo a passo.",
+          "acceptance_criteria": [
+            "Dado o invariante, quando analisado, então satisfaz inicialização, manutenção e término e implica lista ordenada",
+            "Dado o pseudocódigo, quando lido, então é inequívoco e traduzível diretamente para código",
+            "Dado um exemplo numérico, quando executado à mão, então o invariante se mantém em cada iteração"
+          ],
+          "edge_cases": [
+            "O invariante deve cobrir N=0 e N=1 (casos de borda triviais)"
+          ]
+        }
+      ],
+      "files_affected": ["design/formalizacao.md"],
+      "dependencies": ["sprint-02 done"],
+      "notes": "IA NÃO escreve o invariante pronto — faz perguntas que levam o aluno a formulá-lo. Essencial para a defesa oral."
+    },
+    {
+      "id": "sprint-04",
+      "goal": "Implementar my_authorial_sort com contagem correta de comparações/movimentações, passando na suíte.",
+      "status": "pending",
+      "executor": "Aluno coda (TDD; IA revisa)",
+      "papel_do_aluno": "escreve",
+      "features": [
+        {
+          "name": "Implementação instrumentada + testes",
+          "description": "Implementar em student_template.py seguindo o contrato (arr) -> (lista, comps, moves). TDD: testes antes/junto. Passar nos 10 cenários de test_suite.py.",
+          "acceptance_criteria": [
+            "Dado 'python student_template.py', quando executado, então todos os testes unitários passam",
+            "Dado test_suite.py com o autoral integrado, quando rodado, então os 10 cenários passam",
+            "Dados comps/moves, quando comparados à teoria do invariante, então são coerentes (ordem de grandeza esperada)"
+          ],
+          "edge_cases": [
+            "N=0 (vazio) retorna ([],0,0)",
+            "N=1 retorna a própria lista sem comparações",
+            "Todos elementos iguais: não deve degradar nem quebrar",
+            "Vetor reverso (pior caso) e floats/negativos"
+          ],
+          "tdd": {
+            "test_file": "TP1-Codigos-e-Benchmarks/python/test_suite.py",
+            "test_cases": ["cenários test_01 a test_10 já existentes aplicados ao autoral"]
+          }
+        }
+      ],
+      "files_affected": [
+        "TP1-Codigos-e-Benchmarks/python/student_template.py",
+        "TP1-Codigos-e-Benchmarks/python/benchmark.py (adicionar o autoral ao dict algorithms)"
+      ],
+      "dependencies": ["sprint-03 done"],
+      "notes": "Invocar skill tdd-workflow (RED→GREEN→REFACTOR). Erros de teste são prompts diretos de correção."
+    },
+    {
+      "id": "sprint-05",
+      "goal": "Deduzir O (pior), Ω/O (melhor), Θ (médio) e espaço auxiliar; validar contra o benchmark.",
+      "status": "pending",
+      "executor": "Aluno deduz (IA valida)",
+      "papel_do_aluno": "escreve",
+      "features": [
+        {
+          "name": "Análise assintótica formal",
+          "description": "Deduzir complexidade de tempo (melhor/pior/médio) e espaço; recorrência se recursivo; comparar teoria com números empíricos do benchmark.",
+          "acceptance_criteria": [
+            "Dada a análise, quando revisada, então melhor/pior/médio e espaço estão deduzidos com justificativa",
+            "Dado o benchmark (comparações/movimentações vs N), quando plotado, então a curva empírica é consistente com a ordem de grandeza teórica",
+            "Dado recursão (se houver), quando modelada, então há recorrência resolvida (substituição/árvore/Mestre)"
+          ],
+          "edge_cases": [
+            "Se teoria e empírico divergirem, investigar a instrumentação antes de aceitar a divergência"
+          ]
+        }
+      ],
+      "files_affected": ["design/analise-assintotica.md", "TP1-Codigos-e-Benchmarks/python/benchmark_results.png (gerado)"],
+      "dependencies": ["sprint-04 done"],
+      "notes": "Rodar: python benchmark.py --trials 3 --plot benchmark_results.png. Comparar autoral vs ≥2 clássicos."
+    },
+    {
+      "id": "sprint-06",
+      "goal": "Montar a apresentação de slides + declaração de uso de IA para a entrega final.",
+      "status": "pending",
+      "executor": "Aluno + IA",
+      "papel_do_aluno": "escreve e apresenta",
+      "features": [
+        {
+          "name": "Slides + Declaração de IA",
+          "description": "Slides: intuição/metáfora → pseudocódigo ilustrado → invariante → deduções O/Ω/Θ → tabela comparativa vs ≥2 clássicos → gráficos empíricos → declaração de autoria/IA.",
+          "acceptance_criteria": [
+            "Dados os slides, quando conferidos com o enunciado, então cobrem TODOS os itens obrigatórios do TP1",
+            "Dado o código, quando anexado, então é executável e reproduz os experimentos",
+            "Dada a declaração de IA, quando lida, então informa ferramenta, porquê, como, o que foi modificado e como foi validado",
+            "Dado cada slide, quando arguido, então o aluno consegue defendê-lo oralmente"
+          ],
+          "edge_cases": [
+            "Sem declaração de IA = nota 0,0. Sem código executável = nota 0,0. Verificar ambos antes de entregar."
+          ]
+        }
+      ],
+      "files_affected": ["entrega/slides.md (ou .pptx/.pdf)", "entrega/declaracao-ia.md"],
+      "dependencies": ["sprint-05 done"],
+      "notes": "Ensaiar defesa usando o M9 da apostila como roteiro de arguição. Declaração transparente concorre ao bônus 'Uso Excepcional de IA'."
+    }
+  ],
+  "lint_rules": [
+    "Toda função de sort respeita o contrato (arr) -> (lista_ordenada, comparacoes, movimentacoes)",
+    "Nenhum arquivo de documentação (.md) excede ~350 linhas — dividir quando necessário",
+    "authorial.py (DPES) é exemplo do professor — nunca usar como solução autoral",
+    "Nenhum TODO no código sem item de sprint correspondente"
+  ],
+  "garbage_collected_rules": []
+}
