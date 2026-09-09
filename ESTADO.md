@@ -9,10 +9,10 @@
 
 ## 🎯 Próxima sprint a executar
 
-**`sprint-01` — Apostila de estudo (M0–M9)** (status: `pending`)
+**`sprint-02` — Brainstorming do conceito autoral** (status: `pending`)
 
-Executor: **Sonnet em janela limpa**. Abra um chat novo e peça para conduzir a `sprint-01`
-lendo este `ESTADO.md` + `SPEC.json`. Papel do aluno: revisar e estudar.
+Executor: **Colaborativo (IA propõe, aluno decide)**. Abra um chat novo e peça para conduzir
+a `sprint-02` lendo este `ESTADO.md` + `SPEC.json`. Papel do aluno: decidir e refinar.
 
 ---
 
@@ -21,7 +21,7 @@ lendo este `ESTADO.md` + `SPEC.json`. Papel do aluno: revisar e estudar.
 | Sprint | Objetivo | Executor | Papel do aluno | Status |
 |--------|----------|----------|----------------|--------|
 | sprint-00 | Setup do repo git | IA (infra) | revisa | 🟢 done |
-| sprint-01 | Apostila de estudo (M0–M9) | Sonnet (janela limpa) | revisa/estuda | ⚪ pending |
+| sprint-01 | Apostila de estudo (M0–M9) | Sonnet (janela limpa) | revisa/estuda | 🟢 done |
 | sprint-02 | Brainstorming do conceito autoral | Colaborativo | decide | ⚪ pending |
 | sprint-03 | Formalização + invariante | Aluno escreve | escreve | ⚪ pending |
 | sprint-04 | Implementação + instrumentação (TDD) | Aluno coda | escreve | ⚪ pending |
@@ -40,12 +40,15 @@ Legenda: 🟢 done · 🟡 in_progress · ⚪ pending
 - **Arquivos primordiais criados:** `PRD.md`, `SPEC.json`, `ESTADO.md`, `CLAUDE.md`, `README.md`.
 - **Infra git:** `git init` em `tp1/`, branch `main`, remote `origin`, `.gitignore` (PDFs fora),
   `gh auth setup-git` (push sem re-login). **Commit inicial + push feitos → `sprint-00` fechada.**
+- **Apostila criada:** `apostila/` com 10 módulos M0–M9 (PT-BR, ≤108 linhas cada). Números
+  empíricos extraídos rodando o benchmark (seed=42). **`sprint-01` fechada.**
 
 ---
 
 ## ⏭️ Pendências imediatas
 
-1. Abrir janela limpa → iniciar `sprint-01` (Apostila): "leia ESTADO.md + SPEC.json e conduza a sprint-01".
+1. Estudar os módulos M0–M9 da `apostila/` antes de iniciar a sprint-02.
+2. Abrir janela limpa → iniciar `sprint-02` (Brainstorming): "leia ESTADO.md + SPEC.json e conduza a sprint-02".
 
 ---
 

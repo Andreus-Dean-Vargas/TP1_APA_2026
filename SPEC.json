@@ -46,7 +46,7 @@
     {
       "id": "sprint-01",
       "goal": "Produzir a apostila de estudo (PT-BR) que dá domínio dos fundamentos do TP1, ancorada em pesquisa online das referências e no código fornecido.",
-      "status": "pending",
+      "status": "done",
       "executor": "Sonnet (janela limpa)",
       "papel_do_aluno": "revisa e estuda",
       "features": [
