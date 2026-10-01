@@ -114,7 +114,7 @@
     {
       "id": "sprint-03",
       "goal": "Pseudocódigo rigoroso + invariante de laço que prova a ordenação.",
-      "status": "pending",
+      "status": "done",
       "executor": "Aluno escreve (IA orienta)",
       "papel_do_aluno": "escreve",
       "features": [
@@ -133,7 +133,7 @@
       ],
       "files_affected": ["design/formalizacao.md"],
       "dependencies": ["sprint-02 done"],
-      "notes": "IA NÃO escreve o invariante pronto — faz perguntas que levam o aluno a formulá-lo. Essencial para a defesa oral."
+      "notes": "DESVIO em 2026-10-01: por urgência de prazo e decisão explícita do aluno (sem apresentação/defesa oral prevista para este TP), a IA formalizou pseudocódigo+invariante diretamente em design/formalizacao.md, em vez do modo socrático original. Registrado para a declaração de IA da sprint-06."
     },
     {
       "id": "sprint-04",

@@ -9,10 +9,7 @@
 
 ## 🎯 Próxima sprint a executar
 
-**`sprint-03` — Formalização + invariante** (status: `pending`)
-
-Executor: **Aluno escreve (IA orienta)**. Papel do aluno: redigir pseudocódigo + invariante de
-laço; a IA guia por perguntas (tutor socrático), nunca entrega pronto.
+**`sprint-04` — Implementação (TDD)** (status: `pending`)
 
 ---
 
@@ -23,7 +20,7 @@ laço; a IA guia por perguntas (tutor socrático), nunca entrega pronto.
 | sprint-00 | Setup do repo git | IA (infra) | revisa | 🟢 done |
 | sprint-01 | Apostila de estudo (M0–M9) | Sonnet (janela limpa) | revisa/estuda | 🟢 done |
 | sprint-02 | Brainstorming do conceito autoral | Colaborativo | decide | 🟢 done |
-| sprint-03 | Formalização + invariante | Aluno escreve | escreve | ⚪ pending |
+| sprint-03 | Formalização + invariante | Aluno escreve | escreve (⚠️ IA executou por urgência de prazo — ver declaração de IA) | 🟢 done |
 | sprint-04 | Implementação + instrumentação (TDD) | Aluno coda | escreve | ⚪ pending |
 | sprint-05 | Análise assintótica formal | Aluno deduz | escreve | ⚪ pending |
 | sprint-06 | Slides + Declaração de IA | Aluno + IA | escreve/apresenta | ⚪ pending |
