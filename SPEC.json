@@ -90,7 +90,7 @@
     {
       "id": "sprint-02",
       "goal": "Escolher UM conceito de ordenação autoral não-trivial e defensável.",
-      "status": "pending",
+      "status": "done",
       "executor": "Colaborativo (IA propõe, aluno decide)",
       "papel_do_aluno": "decide e refina",
       "features": [
@@ -109,7 +109,7 @@
       ],
       "files_affected": ["design/conceito-autoral.md"],
       "dependencies": ["sprint-01 done (aluno estudou a apostila)"],
-      "notes": "Tutor socrático: guiar por perguntas, não impor. O aluno precisa conseguir explicar por que a ideia é dele."
+      "notes": "FECHADA em 2026-10-01: conceito escolhido = SCED. Dúvida de originalidade (vs. Bingo Sort) foi assumida como risco aceito sem consulta ao professor, por urgência de prazo — justificativa em design/duvidas-professor.md."
     },
     {
       "id": "sprint-03",

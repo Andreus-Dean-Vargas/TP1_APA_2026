@@ -25,6 +25,9 @@ defesa oral**, não performance bruta.
 - **TDD** na implementação (skill `tdd-workflow`): testes antes/junto, nunca depois.
 - Docs `.md` não excedem ~350 linhas — dividir quando necessário.
 - **Um commit por sprint fechada** (Fase F), com atualização de `ESTADO.md` e `SPEC.json`.
+- **Commits SEM co-autoria de IA.** Nunca adicionar o trailer `Co-Authored-By: Claude` (nem qualquer
+  menção a geração por IA) nas mensagens de commit deste projeto. A autoria dos commits é do aluno; o
+  uso de IA é declarado exclusivamente na seção própria da entrega (conforme as Regras do Jogo).
 
 ## Anti-nota-0 (checklist crítico)
 

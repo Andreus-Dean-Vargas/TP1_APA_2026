@@ -3,16 +3,16 @@
 > Ponteiro de estado do projeto. **Leia este arquivo primeiro** ao abrir uma janela limpa.
 > Ele diz qual é a próxima sprint. O detalhe de cada sprint está no `SPEC.json`.
 
-**Última atualização:** 2026-09-08
+**Última atualização:** 2026-10-01
 
 ---
 
 ## 🎯 Próxima sprint a executar
 
-**`sprint-02` — Brainstorming do conceito autoral** (status: `pending`)
+**`sprint-03` — Formalização + invariante** (status: `pending`)
 
-Executor: **Colaborativo (IA propõe, aluno decide)**. Abra um chat novo e peça para conduzir
-a `sprint-02` lendo este `ESTADO.md` + `SPEC.json`. Papel do aluno: decidir e refinar.
+Executor: **Aluno escreve (IA orienta)**. Papel do aluno: redigir pseudocódigo + invariante de
+laço; a IA guia por perguntas (tutor socrático), nunca entrega pronto.
 
 ---
 
@@ -22,7 +22,7 @@ a `sprint-02` lendo este `ESTADO.md` + `SPEC.json`. Papel do aluno: decidir e re
 |--------|----------|----------|----------------|--------|
 | sprint-00 | Setup do repo git | IA (infra) | revisa | 🟢 done |
 | sprint-01 | Apostila de estudo (M0–M9) | Sonnet (janela limpa) | revisa/estuda | 🟢 done |
-| sprint-02 | Brainstorming do conceito autoral | Colaborativo | decide | ⚪ pending |
+| sprint-02 | Brainstorming do conceito autoral | Colaborativo | decide | 🟢 done |
 | sprint-03 | Formalização + invariante | Aluno escreve | escreve | ⚪ pending |
 | sprint-04 | Implementação + instrumentação (TDD) | Aluno coda | escreve | ⚪ pending |
 | sprint-05 | Análise assintótica formal | Aluno deduz | escreve | ⚪ pending |
@@ -47,8 +47,10 @@ Legenda: 🟢 done · 🟡 in_progress · ⚪ pending
 
 ## ⏭️ Pendências imediatas
 
-1. Estudar os módulos M0–M9 da `apostila/` antes de iniciar a sprint-02.
-2. Abrir janela limpa → iniciar `sprint-02` (Brainstorming): "leia ESTADO.md + SPEC.json e conduza a sprint-02".
+1. Executar `sprint-03` (Formalização + invariante) em `design/formalizacao.md`.
+2. Em seguida, `sprint-04` (implementação TDD), `sprint-05` (análise assintótica) e `sprint-06`
+   (slides + declaração de IA) — todas pendentes, comprimidas na mesma sessão por urgência de
+   prazo (exceção pontual à regra de janela limpa por sprint).
 
 ---
 
@@ -58,3 +60,7 @@ Legenda: 🟢 done · 🟡 in_progress · ⚪ pending
 - Algoritmo autoral = **brainstorming do zero** (não reaproveitar o DPES do professor).
 - Idioma de todos os artefatos = **PT-BR**.
 - Repo versiona **só o TP1** (git dentro de `tp1/`), sem os PDFs das aulas.
+- **Conceito fechado na sprint-02: SCED** (Seleção Convergente de Extremos Distintos). Adaptação
+  declarada do Bingo Sort (NIST DADS) com extensão bidirecional convergente. Risco de originalidade
+  (dúvida 1 do professor) aceito sem consulta prévia — justificativa completa em
+  `design/duvidas-professor.md` (seção "Fechamento da sprint-02").
