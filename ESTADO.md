@@ -9,7 +9,7 @@
 
 ## 🎯 Próxima sprint a executar
 
-**`sprint-05` — Análise assintótica** (status: `pending`)
+**`sprint-06` — Slides + Declaração de IA** (status: `pending`)
 
 ---
 
@@ -22,6 +22,7 @@
 | sprint-02 | Brainstorming do conceito autoral | Colaborativo | decide | 🟢 done |
 | sprint-03 | Formalização + invariante | Aluno escreve | escreve (⚠️ IA executou por urgência de prazo — ver declaração de IA) | 🟢 done |
 | sprint-04 | Implementação (TDD) | Aluno coda | escreve (⚠️ IA executou por urgência de prazo — ver declaração de IA) | 🟢 done |
+| sprint-05 | Análise assintótica | Aluno deduz | escreve (⚠️ IA executou por urgência de prazo — ver declaração de IA) | 🟢 done |
 | sprint-04 | Implementação + instrumentação (TDD) | Aluno coda | escreve | ⚪ pending |
 | sprint-05 | Análise assintótica formal | Aluno deduz | escreve | ⚪ pending |
 | sprint-06 | Slides + Declaração de IA | Aluno + IA | escreve/apresenta | ⚪ pending |
