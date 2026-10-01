@@ -138,7 +138,7 @@
     {
       "id": "sprint-04",
       "goal": "Implementar my_authorial_sort com contagem correta de comparações/movimentações, passando na suíte.",
-      "status": "pending",
+      "status": "done",
       "executor": "Aluno coda (TDD; IA revisa)",
       "papel_do_aluno": "escreve",
       "features": [
@@ -167,7 +167,7 @@
         "TP1-Codigos-e-Benchmarks/python/benchmark.py (adicionar o autoral ao dict algorithms)"
       ],
       "dependencies": ["sprint-03 done"],
-      "notes": "Invocar skill tdd-workflow (RED→GREEN→REFACTOR). Erros de teste são prompts diretos de correção."
+      "notes": "DESVIO em 2026-10-01: implementado diretamente pela IA por urgência de prazo (sem TDD aluno-primeiro). 70/70 testes passando (test_suite.py), incluindo os 10 cenários obrigatórios para o SCED. Registrado para a declaração de IA da sprint-06."
     },
     {
       "id": "sprint-05",

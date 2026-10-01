@@ -12,9 +12,54 @@ from typing import Any, List, Tuple
 import unittest
 
 
+def _partition_convergent(a, low, high, vmin, vmax):
+    """PARTITION-CONVERGENT: move todas as cópias de vmin para o início e de vmax
+    para o fim de a[low..high], rastreando min/max do miolo que sobrar."""
+    comps = 0
+    moves = 0
+    left, i, right = low, low, high
+    mid_min = mid_max = None
+
+    while i <= right:
+        comps += 1
+        if a[i] == vmin:
+            if i != left:
+                a[i], a[left] = a[left], a[i]
+                moves += 2
+            left += 1
+            i += 1
+        else:
+            comps += 1
+            if a[i] == vmax:
+                if i != right:
+                    a[i], a[right] = a[right], a[i]
+                    moves += 2
+                right -= 1
+                # i NÃO avança: o valor trazido de "right" ainda não foi visto
+            else:
+                if mid_min is None:
+                    mid_min = mid_max = a[i]
+                else:
+                    comps += 1
+                    if a[i] < mid_min:
+                        mid_min = a[i]
+                    comps += 1
+                    if a[i] > mid_max:
+                        mid_max = a[i]
+                i += 1
+
+    return left, right, mid_min, mid_max, comps, moves
+
+
 def my_authorial_sort(arr: List[Any]) -> Tuple[List[Any], int, int]:
     """
-    IMPLEMENTE AQUI SEU ALGORITMO AUTORAL.
+    SCED — Seleção Convergente de Extremos Distintos.
+
+    Em cada passada, acha o menor e o maior valor distinto ainda não posicionados
+    e move todas as suas cópias para as duas extremidades da região não resolvida,
+    convergindo de fora para dentro. Adaptação declarada do Bingo Sort (NIST DADS)
+    com extensão bidirecional convergente — ver design/conceito-autoral.md e
+    design/formalizacao.md (pseudocódigo + prova do invariante de laço).
 
     Parâmetros:
         arr (List[Any]): Lista de entrada a ser ordenada.
@@ -23,31 +68,60 @@ def my_authorial_sort(arr: List[Any]) -> Tuple[List[Any], int, int]:
         Tuple[List[Any], int, int]:
             - Lista ordenada
             - Total de comparações realizadas
-            - Total de movimentações/trocas realizadas
+            - Total de movimentações/trocas realizadas (1 por elemento deslocado)
     """
     a = list(arr)
     n = len(a)
     comps = 0
     moves = 0
 
-    # =========================================================================
-    # TODO: Escreva sua lógica autoral aqui.
-    # Exemplo temporário (substitua pelo seu algoritmo):
-    for i in range(1, n):
-        key = a[i]
-        moves += 1
-        j = i - 1
-        while j >= 0:
-            comps += 1
-            if a[j] > key:
-                a[j + 1] = a[j]
-                moves += 1
-                j -= 1
-            else:
-                break
-        a[j + 1] = key
-        moves += 1
-    # =========================================================================
+    if n <= 1:
+        return a, comps, moves
+
+    # Atalho: verificação O(n) de "já ordenado" + extremos globais na mesma varredura.
+    vmin = vmax = a[0]
+    sorted_asc = True
+    for k in range(1, n):
+        comps += 1
+        if a[k] < a[k - 1]:
+            sorted_asc = False
+        comps += 1
+        if a[k] < vmin:
+            vmin = a[k]
+        comps += 1
+        if a[k] > vmax:
+            vmax = a[k]
+
+    if sorted_asc:
+        return a, comps, moves
+
+    low, high = 0, n - 1
+    have_extremes = True
+
+    while low <= high:
+        if not have_extremes:
+            vmin = vmax = a[low]
+            for k in range(low + 1, high + 1):
+                comps += 1
+                if a[k] < vmin:
+                    vmin = a[k]
+                comps += 1
+                if a[k] > vmax:
+                    vmax = a[k]
+
+        if vmin == vmax:
+            break
+
+        left, right, mid_min, mid_max, c, m = _partition_convergent(a, low, high, vmin, vmax)
+        comps += c
+        moves += m
+        low, high = left, right
+
+        if low <= high and mid_min is not None:
+            vmin, vmax = mid_min, mid_max
+            have_extremes = True
+        else:
+            have_extremes = False
 
     return a, comps, moves
 

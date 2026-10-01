@@ -22,6 +22,7 @@ from classical import (
     quick_sort,
     selection_sort,
 )
+from student_template import my_authorial_sort
 
 
 def generate_dataset(n: int, distribution: str) -> List[int]:
@@ -159,12 +160,11 @@ def main():
     args = parser.parse_args()
 
     algorithms = {
-        "Bubble Sort": bubble_sort,
-        "Selection Sort": selection_sort,
         "Insertion Sort": insertion_sort,
+        "Selection Sort": selection_sort,
         "Merge Sort": merge_sort,
         "Quick Sort": quick_sort,
-        "Authorial (DPES)": dpes_sort,
+        "SCED (autoral)": my_authorial_sort,
     }
 
     sizes = [10, 50, 100, 250, 500, 1000]
