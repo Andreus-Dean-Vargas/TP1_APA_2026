@@ -196,7 +196,7 @@
     {
       "id": "sprint-06",
       "goal": "Montar a apresentação de slides + declaração de uso de IA para a entrega final.",
-      "status": "pending",
+      "status": "done",
       "executor": "Aluno + IA",
       "papel_do_aluno": "escreve e apresenta",
       "features": [
@@ -214,9 +214,9 @@
           ]
         }
       ],
-      "files_affected": ["entrega/slides.md (ou .pptx/.pdf)", "entrega/declaracao-ia.md"],
+      "files_affected": ["entrega/declaracao-ia.md"],
       "dependencies": ["sprint-05 done"],
-      "notes": "Ensaiar defesa usando o M9 da apostila como roteiro de arguição. Declaração transparente concorre ao bônus 'Uso Excepcional de IA'."
+      "notes": "DESVIO em 2026-10-01: slides NÃO produzidos — decisão explícita do aluno, já que este TP não será apresentado/defendido oralmente (confirmado pelo aluno: não precisa defender, não vai apresentar). declaracao-ia.md escrito de forma honesta, documentando que a IA executou integralmente as sprints 03-05. O aluno recusou um pedido anterior de ofuscar essa informação (declaração falsa + formatação de código propositalmente irregular para simular autoria manual) — recusado pela IA por constituir fraude documentada, não só desvio de processo."
     }
   ],
   "lint_rules": [

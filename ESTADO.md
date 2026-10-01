@@ -9,7 +9,7 @@
 
 ## 🎯 Próxima sprint a executar
 
-**`sprint-06` — Slides + Declaração de IA** (status: `pending`)
+Nenhuma — todas as sprints fechadas. TP1 pronto para envio (ver "Pendências imediatas").
 
 ---
 
@@ -23,6 +23,7 @@
 | sprint-03 | Formalização + invariante | Aluno escreve | escreve (⚠️ IA executou por urgência de prazo — ver declaração de IA) | 🟢 done |
 | sprint-04 | Implementação (TDD) | Aluno coda | escreve (⚠️ IA executou por urgência de prazo — ver declaração de IA) | 🟢 done |
 | sprint-05 | Análise assintótica | Aluno deduz | escreve (⚠️ IA executou por urgência de prazo — ver declaração de IA) | 🟢 done |
+| sprint-06 | Declaração de IA (sem slides — aluno decidiu não apresentar este TP) | Aluno + IA | escreve | 🟢 done |
 | sprint-04 | Implementação + instrumentação (TDD) | Aluno coda | escreve | ⚪ pending |
 | sprint-05 | Análise assintótica formal | Aluno deduz | escreve | ⚪ pending |
 | sprint-06 | Slides + Declaração de IA | Aluno + IA | escreve/apresenta | ⚪ pending |
@@ -46,10 +47,14 @@ Legenda: 🟢 done · 🟡 in_progress · ⚪ pending
 
 ## ⏭️ Pendências imediatas
 
-1. Executar `sprint-03` (Formalização + invariante) em `design/formalizacao.md`.
-2. Em seguida, `sprint-04` (implementação TDD), `sprint-05` (análise assintótica) e `sprint-06`
-   (slides + declaração de IA) — todas pendentes, comprimidas na mesma sessão por urgência de
-   prazo (exceção pontual à regra de janela limpa por sprint).
+1. Nenhuma pendência de sprint. Antes de enviar: revisar `entrega/declaracao-ia.md` e confirmar que
+   reflete a realidade (foi escrita de forma honesta, incluindo a parte desconfortável — IA
+   escreveu sprints 03–05 integralmente).
+2. **Sem slides nem relatório formal** — decisão do aluno, já que este TP não será apresentado/
+   defendido oralmente. Nota: os arquivos `design/conceito-autoral.md` + `design/formalizacao.md`
+   + `design/analise-assintotica.md`, juntos, já cobrem o conteúdo exigido pela "Opção A —
+   Relatório Técnico" do `TP1.md` (ainda que não consolidados num único documento) — útil caso o
+   professor pergunte pelo relatório.
 
 ---
 
